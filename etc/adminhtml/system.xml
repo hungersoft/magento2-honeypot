@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="hs_honeypot" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Honeypot</label>
+            <tab>hungersoft</tab>
+            <resource>HS_Honeypot::config_hs_honeypot</resource>
+            <group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>General</label>
+                <field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="forms" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="multiselect">
+                    <label>Forms</label>
+                    <source_model>HS\Honeypot\Model\System\Config\Source\Forms</source_model>
+                </field>
+                <field id="custom_forms" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+                    <label>Custom Forms</label>
+                    <frontend_model>HS\Honeypot\Block\Adminhtml\Form\Field\CustomForms</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>
+                        <![CDATA[Use {module}_{controller/action_path}_{action} to for action that needs the honeypot check<br />For selectors, add the respective css element selector that matches the specific form]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

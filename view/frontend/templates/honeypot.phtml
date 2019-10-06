@@ -1,0 +1,13 @@
+<?php
+$helper = $this->helper('HS\Honeypot\Helper\Data');
+if ($helper->isEnabled()): ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "HS_Honeypot/js/honeypot": {
+                    "forms": <?= /* @noEscape */ json_encode($helper->getFormSelectors()) ?>
+                }
+            }
+        }
+    </script>
+<?php endif; ?>
