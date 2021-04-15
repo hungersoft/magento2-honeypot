@@ -1,0 +1,48 @@
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="billing-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="payment" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+		                                        <item name="additional-payment-validators" xsi:type="array">
+		                                            <item name="children" xsi:type="array">
+		                                                <item name="honeypot-validator" xsi:type="array">
+		                                                    <item name="component" xsi:type="string">HS_Honeypot/js/view/honeypot-validation</item>
+		                                                </item>
+
+		                                            </item>
+		                                        </item>
+                                                        <item name="afterMethods" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="honeypot-hidden-field" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">HS_Honeypot/js/checkout/honeypot</item>
+                                                                    <item name="displayArea" xsi:type="string">before-place-order</item>
+                                                                    <item name="sortOrder" xsi:type="string">3</item>
+                                                                    <item name="dataScope" xsi:type="string">honeypot</item>
+                                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
