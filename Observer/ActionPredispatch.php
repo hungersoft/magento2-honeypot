@@ -95,7 +95,7 @@ class ActionPredispatch implements \Magento\Framework\Event\ObserverInterface
             return $this;
         }
 
-        if ($this->request->getParam('hs_hid') !== '') {
+        if (!empty($this->request->getParam('hs_hid'))) {
             $this->processError();
         }
     }
